@@ -73,34 +73,21 @@ function seedTraders() {
   if (traders.size > 0) return;
   const demoTraders: TraderProfile[] = [
     {
-      id: "trader-noah", name: "Noah (Demo)", balance: 12450,
-      positions: [
-        { id: "pos-1", market: "Auburn to Win South Region", side: "YES", amount: 500, entryPrice: 0.42, currentPrice: 0.55, status: "open", openedAt: new Date(Date.now() - 3 * 86400000).toISOString() },
-        { id: "pos-2", market: "Duke to Win National Championship", side: "YES", amount: 300, entryPrice: 0.18, currentPrice: 0.22, status: "open", openedAt: new Date(Date.now() - 2 * 86400000).toISOString() },
-      ],
-      history: [
-        { id: "hist-1", market: "Kansas State to Win Midwest", side: "YES", amount: 200, entryPrice: 0.35, exitPrice: 0.58, pnl: 131.43, closedAt: new Date(Date.now() - 5 * 86400000).toISOString() },
-        { id: "hist-2", market: "Connecticut to Win South", side: "NO", amount: 150, entryPrice: 0.65, exitPrice: 0.48, pnl: 39.23, closedAt: new Date(Date.now() - 4 * 86400000).toISOString() },
-      ],
+      id: "trader-noah", name: "Noah (Demo)", balance: 10000,
+      positions: [],
+      history: [],
       createdAt: new Date(Date.now() - 7 * 86400000).toISOString(),
     },
     {
-      id: "trader-bracket-buster", name: "BracketBuster99", balance: 8750,
-      positions: [
-        { id: "pos-3", market: "12-Seed to Upset in South Region", side: "YES", amount: 250, entryPrice: 0.28, currentPrice: 0.31, status: "open", openedAt: new Date(Date.now() - 86400000).toISOString() },
-      ],
-      history: [
-        { id: "hist-3", market: "Gonzaga to Reach Elite Eight", side: "YES", amount: 400, entryPrice: 0.44, exitPrice: 0.61, pnl: 154.55, closedAt: new Date(Date.now() - 3 * 86400000).toISOString() },
-      ],
+      id: "trader-bracket-buster", name: "BracketBuster99", balance: 10000,
+      positions: [],
+      history: [],
       createdAt: new Date(Date.now() - 6 * 86400000).toISOString(),
     },
     {
-      id: "trader-hoop-dreams", name: "HoopDreams", balance: 9825,
+      id: "trader-hoop-dreams", name: "HoopDreams", balance: 10000,
       positions: [],
-      history: [
-        { id: "hist-4", market: "Auburn to Win First Round", side: "YES", amount: 1000, entryPrice: 0.85, exitPrice: 0.95, pnl: 117.65, closedAt: new Date(Date.now() - 2 * 86400000).toISOString() },
-        { id: "hist-5", market: "Longwood to Upset Duke", side: "YES", amount: 175, entryPrice: 0.04, exitPrice: 0.02, pnl: -87.50, closedAt: new Date(Date.now() - 86400000).toISOString() },
-      ],
+      history: [],
       createdAt: new Date(Date.now() - 5 * 86400000).toISOString(),
     },
   ];
@@ -136,11 +123,11 @@ async function safeFetch(url: string, label: string) {
 function getDemoScores() {
   return {
     games: [
-      { gameID: "demo-1", away: { names: { full: "Duke Blue Devils" }, seed: "1", score: "82" }, home: { names: { full: "Longwood Lancers" }, seed: "16", score: "54" }, gameState: "final", startTimeEpoch: (Date.now() - 7200000) / 1000, network: "CBS", currentPeriod: "Final" },
-      { gameID: "demo-2", away: { names: { full: "Auburn Tigers" }, seed: "1", score: "71" }, home: { names: { full: "Alabama State Hornets" }, seed: "16", score: "43" }, gameState: "final", startTimeEpoch: (Date.now() - 10800000) / 1000, network: "TBS", currentPeriod: "Final" },
-      { gameID: "demo-3", away: { names: { full: "Kansas State Wildcats" }, seed: "1", score: "68" }, home: { names: { full: "Bethune-Cookman Wildcats" }, seed: "16", score: "51" }, gameState: "live", startTimeEpoch: (Date.now() - 3600000) / 1000, network: "TNT", currentPeriod: "2nd Half 12:34" },
-      { gameID: "demo-4", away: { names: { full: "Arizona Wildcats" }, seed: "1", score: "" }, home: { names: { full: "St. Francis Terriers" }, seed: "16", score: "" }, gameState: "upcoming", startTimeEpoch: (Date.now() + 7200000) / 1000, network: "ESPN", currentPeriod: "" },
-      { gameID: "demo-5", away: { names: { full: "Kentucky Wildcats" }, seed: "2", score: "" }, home: { names: { full: "Vermont Catamounts" }, seed: "15", score: "" }, gameState: "upcoming", startTimeEpoch: (Date.now() + 12600000) / 1000, network: "TBS", currentPeriod: "" },
+      { gameID: "demo-1", away: { names: { full: "Duke Blue Devils" }, seed: "1", score: "84" }, home: { names: { full: "Siena Saints" }, seed: "16", score: "56" }, gameState: "final", startTimeEpoch: (Date.now() - 7200000) / 1000, network: "CBS", label: "East Region · First Round", currentPeriod: "Final" },
+      { gameID: "demo-2", away: { names: { full: "Florida Gators" }, seed: "1", score: "73" }, home: { names: { full: "Prairie View Panthers" }, seed: "16", score: "48" }, gameState: "final", startTimeEpoch: (Date.now() - 10800000) / 1000, network: "TBS", label: "South Region · First Round", currentPeriod: "Final" },
+      { gameID: "demo-3", away: { names: { full: "Michigan Wolverines" }, seed: "1", score: "71" }, home: { names: { full: "UMBC Retrievers" }, seed: "16", score: "58" }, gameState: "live", startTimeEpoch: (Date.now() - 3600000) / 1000, network: "TNT", label: "Midwest Region · First Round", currentPeriod: "2nd Half 12:34" },
+      { gameID: "demo-4", away: { names: { full: "Arizona Wildcats" }, seed: "1", score: "" }, home: { names: { full: "LIU Sharks" }, seed: "16", score: "" }, gameState: "upcoming", startTimeEpoch: (Date.now() + 7200000) / 1000, network: "ESPN", label: "West Region · First Round", currentPeriod: "" },
+      { gameID: "demo-5", away: { names: { full: "UConn Huskies" }, seed: "2", score: "" }, home: { names: { full: "Furman Paladins" }, seed: "15", score: "" }, gameState: "upcoming", startTimeEpoch: (Date.now() + 12600000) / 1000, network: "TBS", label: "East Region · First Round", currentPeriod: "" },
     ],
     demo: true,
   };
@@ -149,14 +136,14 @@ function getDemoScores() {
 function getDemoPolymarketEvents() {
   return {
     events: [
-      { id: "pm-1", title: "Auburn to Win National Championship", probability: 0.14, volume: 485200, markets: [{ id: "pm-1a", outcomePrices: [0.14, 0.86] }] },
-      { id: "pm-2", title: "Duke Blue Devils to Win National Championship", probability: 0.18, volume: 612400, markets: [{ id: "pm-2a", outcomePrices: [0.18, 0.82] }] },
-      { id: "pm-3", title: "Kansas State to Win National Championship", probability: 0.11, volume: 324100, markets: [{ id: "pm-3a", outcomePrices: [0.11, 0.89] }] },
-      { id: "pm-4", title: "Houston to Win National Championship", probability: 0.09, volume: 298700, markets: [{ id: "pm-4a", outcomePrices: [0.09, 0.91] }] },
-      { id: "pm-5", title: "St. John's to Win National Championship", probability: 0.07, volume: 187300, markets: [{ id: "pm-5a", outcomePrices: [0.07, 0.93] }] },
-      { id: "pm-6", title: "Tennessee to Reach Final Four", probability: 0.28, volume: 156800, markets: [{ id: "pm-6a", outcomePrices: [0.28, 0.72] }] },
-      { id: "pm-7", title: "12-Seed to Beat 5-Seed (South Region)", probability: 0.34, volume: 89400, markets: [{ id: "pm-7a", outcomePrices: [0.34, 0.66] }] },
-      { id: "pm-8", title: "Oral Roberts to Win First Round", probability: 0.29, volume: 54200, markets: [{ id: "pm-8a", outcomePrices: [0.29, 0.71] }] },
+      { id: "pm-1", title: "Duke to Win National Championship", probability: 0.22, volume: 712400, markets: [{ id: "pm-1a", outcomePrices: [0.22, 0.78] }] },
+      { id: "pm-2", title: "Arizona to Win National Championship", probability: 0.16, volume: 585200, markets: [{ id: "pm-2a", outcomePrices: [0.16, 0.84] }] },
+      { id: "pm-3", title: "Michigan to Win National Championship", probability: 0.12, volume: 424100, markets: [{ id: "pm-3a", outcomePrices: [0.12, 0.88] }] },
+      { id: "pm-4", title: "Houston to Win National Championship", probability: 0.10, volume: 398700, markets: [{ id: "pm-4a", outcomePrices: [0.10, 0.90] }] },
+      { id: "pm-5", title: "Florida to Win National Championship", probability: 0.09, volume: 287300, markets: [{ id: "pm-5a", outcomePrices: [0.09, 0.91] }] },
+      { id: "pm-6", title: "Gonzaga to Reach Final Four", probability: 0.32, volume: 186800, markets: [{ id: "pm-6a", outcomePrices: [0.32, 0.68] }] },
+      { id: "pm-7", title: "12-Seed Upset in First Round (Any Region)", probability: 0.34, volume: 89400, markets: [{ id: "pm-7a", outcomePrices: [0.34, 0.66] }] },
+      { id: "pm-8", title: "VCU to Beat North Carolina", probability: 0.31, volume: 64200, markets: [{ id: "pm-8a", outcomePrices: [0.31, 0.69] }] },
     ],
     demo: true,
   };
@@ -165,21 +152,21 @@ function getDemoPolymarketEvents() {
 function getDemoOdds() {
   return [
     {
-      id: "odds-demo-1", sport_key: "basketball_ncaab", home_team: "Duke Blue Devils", away_team: "Longwood Lancers",
+      id: "odds-demo-1", sport_key: "basketball_ncaab", home_team: "Duke Blue Devils", away_team: "Siena Saints",
       commence_time: new Date(Date.now() + 3600000).toISOString(),
       bookmakers: [
-        { key: "draftkings", title: "DraftKings", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -2800 }, { name: "Longwood Lancers", price: 1600 }] }, { key: "spreads", outcomes: [{ name: "Duke Blue Devils", price: -110, point: -24.5 }, { name: "Longwood Lancers", price: -110, point: 24.5 }] }] },
-        { key: "fanduel", title: "FanDuel", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -2600 }, { name: "Longwood Lancers", price: 1400 }] }] },
-        { key: "betmgm", title: "BetMGM", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -3000 }, { name: "Longwood Lancers", price: 1800 }] }] },
+        { key: "draftkings", title: "DraftKings", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -2800 }, { name: "Siena Saints", price: 1600 }] }, { key: "spreads", outcomes: [{ name: "Duke Blue Devils", price: -110, point: -24.5 }, { name: "Siena Saints", price: -110, point: 24.5 }] }] },
+        { key: "fanduel", title: "FanDuel", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -2600 }, { name: "Siena Saints", price: 1400 }] }] },
+        { key: "betmgm", title: "BetMGM", markets: [{ key: "h2h", outcomes: [{ name: "Duke Blue Devils", price: -3000 }, { name: "Siena Saints", price: 1800 }] }] },
       ],
     },
     {
-      id: "odds-demo-2", sport_key: "basketball_ncaab", home_team: "Auburn Tigers", away_team: "Alabama State Hornets",
+      id: "odds-demo-2", sport_key: "basketball_ncaab", home_team: "Florida Gators", away_team: "Prairie View Panthers",
       commence_time: new Date(Date.now() + 10800000).toISOString(),
       bookmakers: [
-        { key: "draftkings", title: "DraftKings", markets: [{ key: "h2h", outcomes: [{ name: "Auburn Tigers", price: -3500 }, { name: "Alabama State Hornets", price: 2000 }] }] },
-        { key: "fanduel", title: "FanDuel", markets: [{ key: "h2h", outcomes: [{ name: "Auburn Tigers", price: -3200 }, { name: "Alabama State Hornets", price: 1900 }] }] },
-        { key: "betmgm", title: "BetMGM", markets: [{ key: "h2h", outcomes: [{ name: "Auburn Tigers", price: -4000 }, { name: "Alabama State Hornets", price: 2400 }] }] },
+        { key: "draftkings", title: "DraftKings", markets: [{ key: "h2h", outcomes: [{ name: "Florida Gators", price: -3500 }, { name: "Prairie View Panthers", price: 2000 }] }] },
+        { key: "fanduel", title: "FanDuel", markets: [{ key: "h2h", outcomes: [{ name: "Florida Gators", price: -3200 }, { name: "Prairie View Panthers", price: 1900 }] }] },
+        { key: "betmgm", title: "BetMGM", markets: [{ key: "h2h", outcomes: [{ name: "Florida Gators", price: -4000 }, { name: "Prairie View Panthers", price: 2400 }] }] },
       ],
     },
   ];

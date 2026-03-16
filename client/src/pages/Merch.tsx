@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ExternalLink, Search, ShoppingBag, Tag } from "lucide-react";
 
-const conferences = ["All", "ACC", "SEC", "Big Ten", "Big 12", "Big East", "WCC", "Mountain West", "Atlantic 10", "American", "Ivy League", "Summit", "MAAC", "Patriot League", "Big South", "Southern", "NEC", "SWAC", "Southland", "Sun Belt", "WAC"];
+const conferences = ["All", "ACC", "SEC", "Big Ten", "Big 12", "Big East", "WCC", "MWC", "A-10", "American", "Ivy", "Summit", "MAAC", "Patriot", "Big South", "Southern", "NEC", "SWAC", "Southland", "Sun Belt", "WAC", "MAC", "CAA", "Horizon", "Big West", "Big Sky", "ASUN", "OVC", "America East", "MEAC", "MVC"];
 const regions = ["All", "East", "West", "South", "Midwest"];
 
 const priceRanges: Record<string, { jersey: string; hat: string }> = {

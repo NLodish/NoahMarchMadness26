@@ -36,45 +36,53 @@ function formatTime(epoch: number): string {
 function getTeamId(teamName: string): string {
   const map: Record<string, string> = {
     "Duke Blue Devils": "duke",
+    "UConn Huskies": "uconn",
+    "Michigan State Spartans": "michigan-state",
+    "Kansas Jayhawks": "kansas",
+    "Arizona Wildcats": "arizona",
+    "Purdue Boilermakers": "purdue",
+    "Gonzaga Bulldogs": "gonzaga",
+    "Arkansas Razorbacks": "arkansas",
+    "Michigan Wolverines": "michigan",
+    "Iowa State Cyclones": "iowa-state",
+    "Virginia Cavaliers": "virginia",
+    "Alabama Crimson Tide": "alabama",
+    "Florida Gators": "florida",
+    "Houston Cougars": "houston",
+    "Illinois Fighting Illini": "illinois",
+    "Nebraska Cornhuskers": "nebraska",
     "Kentucky Wildcats": "kentucky",
     "Tennessee Volunteers": "tennessee",
-    "Marquette Golden Eagles": "marquette",
-    "Michigan State Spartans": "michigan-state",
-    "Alabama Crimson Tide": "alabama",
-    "Auburn Tigers": "auburn",
-    "Purdue Boilermakers": "purdue",
-    "Kansas State Wildcats": "kansas-state",
-    "Arizona Wildcats": "arizona",
-    "Houston Cougars": "houston",
-    "Connecticut Huskies": "connecticut",
+    "North Carolina Tar Heels": "north-carolina",
+    "St. John's Red Storm": "st-johns",
   };
-  return map[teamName] || teamName.toLowerCase().split(" ")[0];
+  return map[teamName] || teamName.toLowerCase().replace(/\s+/g, "-").split("-")[0];
 }
 
 const upsetPicks = [
   {
-    seed: 12, higherSeed: 5, team: "McNeese Cowboys", opponent: "Virginia Cavaliers",
-    reasoning: "Virginia's Pack Line defense is historically vulnerable to high-pace guards. Harwin Francois (16.4 ppg) can exploit the perimeter and McNeese leads the Southland in 3PT% at 36.8%.",
+    seed: 12, higherSeed: 5, team: "McNeese Cowboys", opponent: "Vanderbilt Commodores",
+    reasoning: "McNeese (28-5) has the Southland's best offense and thrives in chaos. Vanderbilt's inconsistent perimeter defense could struggle against McNeese's sharpshooting guards.",
     rating: "HIGH",
     region: "South"
   },
   {
-    seed: 11, higherSeed: 6, team: "NC State Wolfpack", opponent: "Indiana Hoosiers",
-    reasoning: "NC State has 'survived and advanced' tournament DNA. DJ Burns Jr.'s unique post-up game creates matchup nightmares, and this team upset multiple higher seeds last year.",
+    seed: 12, higherSeed: 5, team: "High Point Panthers", opponent: "Wisconsin Badgers",
+    reasoning: "High Point (30-4) is a scoring machine from the Big South. Wisconsin plays slow, which could backfire if they can't control tempo against a team with nothing to lose.",
+    rating: "MEDIUM",
+    region: "West"
+  },
+  {
+    seed: 10, higherSeed: 7, team: "Santa Clara Broncos", opponent: "Kentucky Wildcats",
+    reasoning: "Santa Clara (26-8) has WCC tournament pedigree and a disciplined half-court offense. Kentucky's young roster (21-13) was inconsistent all season — a true 7 vs 10 toss-up.",
     rating: "MEDIUM",
     region: "Midwest"
   },
   {
-    seed: 10, higherSeed: 7, team: "New Mexico Lobos", opponent: "Kansas",
-    reasoning: "Playing at altitude favors no one in a neutral site, but Jaelen House (17.2 ppg) is one of the best guards in the Mountain West. Kevin McCullar Jr. is questionable for Kansas.",
-    rating: "MEDIUM",
-    region: "West"
-  },
-  {
-    seed: 13, higherSeed: 4, team: "Yale Bulldogs", opponent: "Gonzaga Bulldogs",
-    reasoning: "Ivy League teams are quietly shooting 37.8% from three. John Poulakidas is a pure shooter who can go off. The August Mahoney-led offense is efficient and disciplined.",
-    rating: "LOW",
-    region: "West"
+    seed: 11, higherSeed: 6, team: "VCU Rams", opponent: "North Carolina Tar Heels",
+    reasoning: "VCU (27-7) brings relentless full-court pressure that rattles opponents. Their 'Havoc' DNA can exploit UNC's turnover-prone backcourt in a chaotic first-round environment.",
+    rating: "HIGH",
+    region: "South"
   },
 ];
 
@@ -87,10 +95,10 @@ const regionColors = {
 };
 
 const regionTop4: Record<string, string[]> = {
-  East: ["Duke (1)", "Kentucky (2)", "Tennessee (3)", "Marquette (4)"],
-  West: ["Arizona (1)", "Houston (2)", "Iowa State (3)", "Gonzaga (4)"],
-  South: ["Auburn (1)", "Purdue (2)", "Texas A&M (3)", "Connecticut (4)"],
-  Midwest: ["Kansas State (1)", "St. John's (2)", "Wisconsin (3)", "Oregon (4)"],
+  East: ["Duke (1)", "UConn (2)", "Michigan St (3)", "Kansas (4)"],
+  West: ["Arizona (1)", "Purdue (2)", "Gonzaga (3)", "Arkansas (4)"],
+  Midwest: ["Michigan (1)", "Iowa State (2)", "Virginia (3)", "Alabama (4)"],
+  South: ["Florida (1)", "Houston (2)", "Illinois (3)", "Nebraska (4)"],
 };
 
 export default function Dashboard() {
